@@ -1,2 +1,2 @@
 # java-multithreading
-A sample application to implement thread pools in java
+A sample application to implement custom thread pools in java
