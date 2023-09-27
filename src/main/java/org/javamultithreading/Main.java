@@ -16,9 +16,9 @@ public class Main {
             threadPool.execute(r);
         }
 
-        /*System.out.println("Waiting for all task to be completed");
+        System.out.println("Waiting for all task to be completed");
         threadPool.waitForAllTasks();
-        System.out.println("All tasks completed");*/
+        System.out.println("All tasks completed");
 
         /*threadPool.stop();
         System.out.println("Thread pool stopped");*/

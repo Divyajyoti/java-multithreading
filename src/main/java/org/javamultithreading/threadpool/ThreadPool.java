@@ -21,11 +21,17 @@ public class ThreadPool {
         taskQueue.offer(r);
     }
 
-    public void stop(){
-        //yet to implement
+    public void stop() {
+
     }
 
-    public void waitForAllTasks(){
-        //yet to implement
+    public void waitForAllTasks() {
+        while (!taskQueue.isEmpty()) {
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 }
