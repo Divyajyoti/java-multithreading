@@ -1,10 +1,29 @@
 package org.javamultithreading;
 
+import org.javamultithreading.producerconsumer.Consumer;
+import org.javamultithreading.producerconsumer.Producer;
 import org.javamultithreading.threadpool.ThreadPool;
 
-public class Main {
-    public static void main(String[] args) {
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
 
+public class Main {
+    public static void main(String[] args) throws InterruptedException {
+
+        //threadpoolExample();
+
+        BlockingQueue<Integer> queue = new ArrayBlockingQueue<>(10);
+        Producer producer = new Producer(queue);
+        Consumer consumer = new Consumer(queue);
+        Thread t1 = new Thread(producer);
+        t1.start();
+        Thread t2 = new Thread(consumer);
+        t2.start();
+       /* t1.join();
+        t2.join();*/
+    }
+
+    private static void threadpoolExample() {
         ThreadPool threadPool = new ThreadPool(3, 10);
         System.out.println("Thread pool created");
 
